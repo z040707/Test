@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- seo -->
+  <meta name="description" content="慕影网是一个收集了大量热门影视信息的网站,欢迎大家前来使用!" />
+  <meta name="keywords" content="慕影网,热门影视" />
+  <!-- icon -->
+  <link rel="shortcut icon" href="https://test-h5.ixook.com/favicon.ico" type="image/x-icon" />
+  <title>慕影网</title>
+  <!-- css -->
+  <link rel="stylesheet" href="./css/index02.css" />
+  <link rel="stylesheet" href="./css/swiper-bundle.min.css" />
+
+  <!-- js -->
+  <script src="./js/axios.min.js"></script>
+  <script src="./js/are-template.js"></script>
+  <script src="./js/swiper-bundle.min.js"></script>
+</head>
+
+<body>
+  <!-- 遮罩层 -->
+  <div class="mask psf"></div>
+  <div class="container">
+    <!-- 头部固定搜索框 -->
+    <div class="search psf dpf">
+      <span class="iconfont psa">&#xe86e;</span>
+      <input type="text" placeholder="请输入要搜索的内容" />
+      <span class="btn psa">取消</span>
+    </div>
+
+    <!-- 轮播 -->
+    <div class="swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <img src="https://img.ixook.com/image/FrFUC0frwvv0ZFDuEAZY7Npoqsbs@banner" alt="" />
+        </div>
+        <div class="swiper-slide">
+          <img src="https://img.ixook.com/image/Fr3MhWW8j1_eY1zNX6Yln8oB1ALk@banner" alt="" />
+        </div>
+        <div class="swiper-slide">
+          <img src="https://img.ixook.com/image/FjBLVKxPli3lIaDO8SdVQwGn9rLs@banner" alt="" />
+        </div>
+        <div class="swiper-slide">
+          <img src="https://img.ixook.com/image/Fp6b96FZdYX8kBx6XLKvmTl_WwOS@banner" alt="" />
+        </div>
+      </div>
+      <!-- 分页器 -->
+      <div class="swiper-pagination"></div>
+    </div>
+
+    <nav class="dpf nava">
+      <a href="##" class="psr">
+        <span class="iconfont psa">&#xe666;</span>
+        <span class="psa">热映中</span>
+      </a>
+      <a href="##" class="psr">
+        <span class="iconfont psa">&#xe67b;</span>
+        <span class="psa">高分榜</span>
+      </a>
+      <a href="##" class="psr">
+        <span class="iconfont psa">&#xe668;</span>
+        <span class="psa">奖项</span>
+      </a>
+      <a href="##" class="psr">
+        <span class="iconfont psa">&#xe61d;</span>
+        <span class="psa">那年今日</span>
+      </a>
+    </nav>
+
+    <!-- 正在热映 -->
+    <div class="theater"></div>
+    <!-- 即将上映 -->
+    <div class="coming"></div>
+    <!-- 那年今日 -->
+    <div class="tbody"></div>
+    <div class="flogo psr">
+      <div class="logo psa">
+        <img src="https://test-h5.ixook.com/img/logo.3572ff19.png" alt="" class="psa" />
+        <span>慕影网</span>
+      </div>
+    </div>
+    <footer class="psf">
+      <nav class="dpf navb">
+        <a href="##" class="psr">
+          <span class="iconfont psa">&#xe8b9;</span>
+          <span class="psa">首页</span>
+        </a>
+        <a href="##" class="psr">
+          <span class="iconfont psa">&#xe62a;</span>
+          <span class="psa">分类</span>
+        </a>
+        <a href="##" class="psr">
+          <span class="iconfont psa">&#xe666;</span>
+          <span class="psa">短片</span>
+        </a>
+        <a href="##" class="psr">
+          <span class="iconfont psa">&#xe61e;</span>
+          <span class="psa">我的</span>
+        </a>
+      </nav>
+    </footer>
+  </div>
+
+  <!-- 模板：正在热映 -->
+  <script type="text/html" id="theater">
+      <div class="navTitle">
+        <span class="title">正在热映</span>
+        <span>
+          <%=theater.total %>部
+          <span class="iconfont">&#xe65f;</span>
+        </span>
+      </div>
+      <div class="navMain">
+        <% for (let i = 0; i < theater.data.length; i++) { %>
+        <a href="##">
+          <div class="image psr">
+            <span class="psa"><%=theater.data[i].category %></span>
+            <img src="<%=theater.data[i].poster %>" alt="" />
+            <span class="psa"><%=theater.data[i].rating %>分</span>
+          </div>
+          <div class="title"><%=theater.data[i].title %></div>
+        </a>
+        <% } %>
+      </div>
+    </script>
+
+  <!-- 模板：即将上映 -->
+  <script type="text/html" id="coming">
+      <div class="navTitle">
+        <span class="title">即将上映</span>
+        <span>
+          <%=coming.total %>部
+          <span class="iconfont">&#xe65f;</span>
+        </span>
+      </div>
+      <div class="navMain">
+        <% for (let i = 0; i < coming.data.length; i++) { %>
+        <a href="##">
+          <div class="image psr">
+            <span class="psa"><%=coming.data[i].countries %></span>
+            <img src="<%=coming.data[i].poster %>" alt="" />
+            <span class="psa"><%=coming.data[i].rating %>分</span>
+          </div>
+          <div class="title"><%=coming.data[i].title %></div>
+          <div class="title"><%=coming.data[i].release_date %></div>
+        </a>
+        <% } %>
+      </div>
+    </script>
+
+  <!-- 模板：那年今日 -->
+  <script type="text/html" id="tbody">
+      <div class="navTitle row">
+        <span class="title">那年今日</span>
+        <span>
+          <%=tbody.total %>部
+          <span class="iconfont">&#xe65f;</span>
+        </span>
+      </div>
+      <div class="navMain row">
+        <% for (let i = 0; i < tbody.data.length; i++) { %>
+        <a href="##">
+          <div class="image psr">
+            <span class="psa"><%=tbody.data[i].category %></span>
+            <img src="<%=tbody.data[i].poster %>" alt="" />
+            <span class="psa"><%=tbody.data[i].rating %>分</span>
+          </div>
+          <div class="title"><%=tbody.data[i].title %></div>
+        </a>
+        <% } %>
+      </div>
+    </script>
+
+  <script src="./js/index02.js"></script>
+</body>
+
+</html>

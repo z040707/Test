@@ -1,0 +1,427 @@
+* {
+    margin: 0;
+    padding: 0;
+    /* 怪异盒模型 */
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+input {
+    outline: none;
+    border: none;
+}
+
+/* 超小屏幕(小于768，宽度改为100%) */
+@media screen and (max-width: 767px) {
+    .container {
+        width: 100%;
+    }
+
+    .search {
+        width: 100%;
+    }
+}
+
+/* 小屏幕(大于等于768，宽度改为750) */
+@media screen and (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+
+    .search {
+        width: 750px;
+    }
+}
+
+/* 中等屏幕(大于等于992，宽度改为970) */
+@media screen and (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+
+    .search {
+        width: 970px;
+    }
+}
+
+/* 大屏幕(大于等于1200，宽度改为1170) */
+@media screen and (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+
+    .search {
+        width: 1170px;
+    }
+}
+
+/* 相对定位 */
+.psr {
+    position: relative;
+}
+
+/* 绝对定位 */
+.psa {
+    position: absolute;
+}
+
+/* 固定定位 */
+.psf {
+    position: fixed;
+}
+
+/* 弹性盒子 */
+.dpf {
+    display: flex;
+}
+
+/* 字体图标 */
+@font-face {
+    font-family: "iconfont";
+    src: url("../fonts/iconfont.woff2") format("woff2"),
+        url("../fonts/iconfont.woff") format("woff"),
+        url("../fonts/iconfont.ttf") format("truetype");
+}
+
+.iconfont {
+    font-family: "iconfont" !important;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+
+
+body {
+    background-color: #f5f5f5;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.mask {
+    width: 100%;
+    height: 100%;
+    display: none;
+    margin-top: 3rem;
+    background-color: #fff;
+    z-index: 1000;
+}
+
+.container {
+    margin: 0 auto !important;
+    background-color: #f5f5f5;
+}
+
+.search {
+    padding: 0 3vw;
+    background-color: rgba(0, 0, 0, 0);
+    top: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 1rem;
+    height: 36px;
+    line-height: 36px;
+    color: #666666;
+    z-index: 100;
+}
+
+.search .iconfont {
+    left: 8%;
+    top: 50%;
+    transform: translateY(-50%);
+    font-weight: 600;
+}
+
+.search input {
+    border-radius: 1rem;
+    background-color: rgba(255, 255, 255, .5);
+    height: 36px;
+    flex-grow: 1;
+    padding-left: 10%;
+}
+
+.search .btn {
+    width: 15%;
+    text-align: center;
+    right: 0;
+    height: 36px;
+    line-height: 36px;
+    border-radius: 1rem;
+    display: none;
+}
+
+.swiper {
+    border-radius: 1rem;
+}
+
+.swiper .swiper-wrapper .swiper-slide {
+    text-align: center;
+    line-height: 0;
+}
+
+.swiper .swiper-wrapper .swiper-slide:nth-child(1) {
+    background-color: #916;
+}
+
+.swiper .swiper-wrapper .swiper-slide:nth-child(2) {
+    background-color: #ff0;
+}
+
+.swiper .swiper-wrapper .swiper-slide:nth-child(3) {
+    background-color: #916dff;
+}
+
+.swiper .swiper-wrapper .swiper-slide:nth-child(4) {
+    background-color: #e54847;
+}
+
+.swiper .swiper-wrapper .swiper-slide:nth-child(5) {
+    background-color: #916;
+}
+
+.swiper .swiper-wrapper .swiper-slide:nth-child(6) {
+    background-color: #ff0;
+}
+
+.swiper img {
+    width: 92%;
+    height: 280px;
+    margin-top: 3rem;
+    border-radius: 1rem;
+    margin: 3rem 3vw 0;
+}
+
+.swbtn {
+    background-color: #41acff;
+    display: inline-block;
+    width: 30px;
+    height: 6px;
+    border-radius: 1rem;
+    margin: 0 .5rem;
+}
+
+.swbtnbg {
+    background-color: red;
+}
+
+
+nav {
+    overflow: hidden;
+    height: 6rem;
+    padding: 0 3vw !important;
+    column-gap: 15vw;
+}
+
+nav a {
+    border-radius: .5rem;
+    background: #f8a52d26;
+    height: 3rem;
+    text-align: center;
+    margin-top: 1rem;
+    flex-grow: 1;
+}
+
+nav a span:first-child {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: #f8a52d;
+}
+
+nav a span:last-child {
+    left: 50%;
+    top: 100%;
+    transform: translateX(-50%);
+    width: 70px;
+    color: #303133;
+}
+
+nav a:nth-child(2) {
+    background: #ff4f4d26;
+}
+
+nav a:nth-child(2) span:first-child {
+    color: #ff4f4d;
+}
+
+nav a:nth-child(3) {
+    background: #41acff26;
+}
+
+nav a:nth-child(3) span:first-child {
+    color: #41acff;
+}
+
+nav a:nth-child(4) {
+    background: #916dff26;
+}
+
+nav a:nth-child(4) span:first-child {
+    color: #916dff;
+}
+
+nav,
+.theater,
+.coming,
+.tbody {
+    background-color: #fff;
+    border-radius: 1rem;
+    padding: 3%;
+    margin-top: 3%;
+    margin: 1rem 3vw 0;
+}
+
+.navTitle {
+    width: 100%;
+    overflow: hidden;
+}
+
+.navTitle>span:first-child {
+    float: left;
+    position: relative;
+    padding-left: 3%;
+}
+
+.navTitle>span:first-child::after {
+    content: "";
+    position: absolute;
+    width: .2rem;
+    height: 100%;
+    border-radius: 1rem;
+    background-color: #e54847;
+    left: 0;
+}
+
+.navTitle>span:last-child {
+    float: right;
+}
+
+.navMain {
+    width: 100%;
+    margin-top: 2%;
+    white-space: nowrap;
+    overflow-x: scroll;
+}
+
+.navMain::-webkit-scrollbar {
+    display: none;
+}
+
+.navMain a {
+    width: 6.5rem;
+    margin-right: 1%;
+    display: inline-block;
+    overflow: hidden;
+    font-size: 12px;
+    padding: 0;
+}
+
+.navMain .image {
+    width: 100%;
+    height: 120px;
+}
+
+.image .psa:first-child {
+    right: 0;
+    background: #ffa500b3;
+    color: #fff;
+    border-radius: 1rem;
+    padding: 2%;
+}
+
+.image img {
+    width: 100%;
+    height: 100%;
+}
+
+.image .psa:last-child {
+    color: #ffa500;
+    bottom: 0;
+    right: 0;
+}
+
+.navMain .title {
+    color: #303133;
+    margin-top: 2%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.flogo {
+    margin-bottom: 280px;
+    margin: 20px auto 200px;
+}
+
+.flogo .logo {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.flogo .logo img {
+    filter: grayscale(100%);
+    height: 1.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.flogo .logo span {
+    color: #cbcbcb;
+    padding-left: 1.5rem;
+}
+
+
+
+
+footer {
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+footer nav {
+    border-radius: 0;
+    height: 6rem;
+    padding: 0 !important;
+    margin: 0 !important;
+    column-gap: 4vw;
+    text-align: center;
+}
+
+footer nav a span:first-child {
+    color: #b7bac3 !important;
+    font-size: 2rem;
+}
+
+footer nav a {
+    background: #fff !important;
+}
+
+footer nav a:first-child span {
+    color: red !important;
+}
